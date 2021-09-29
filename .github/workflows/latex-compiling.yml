@@ -1,0 +1,27 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: main.tex
+      - name: Upload binaries to Github release
+        continue-on-error: true
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: main.pdf
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
+            # <--- Use environment variables that was created earlier - see https://github.com/svenstaro/upload-release-action
+            # Single-quotes do not solve the multiline problem.
+          body: |
+            ## ${{steps.tag.outputs.tag}}
+            ${{ env.RELEASE_BODY }}
+

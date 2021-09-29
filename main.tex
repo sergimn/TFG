@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper,titlepage]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[margin=3cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{courier}
+\usepackage[nottoc,numbib]{tocbibind}
+%\usepackage[colorlinks,allcolors=black]{hyperref}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage{float}
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{eurosym}
+\usepackage{listings}
+%\usepackage{xcolor}
+\usepackage{numprint}
+  \npthousandsep{\,}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{subfig}
+\usepackage{pdflscape}
+
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+
+\definecolor{mygray}{RGB}{245,245,245}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+
+\setlength{\parindent}{0.6cm}
+\setlength{\parskip}{0.5em}
+\setlength{\skip\footins}{1cm}
+
+\author{ \LARGE Sergi Miralles Nogués\vspace{4mm} \\ Director: Felix Freitag  \\ Co-director: Roger Pueyo Centelles}
+
+\title{\vspace{-15mm}\textsc{\Large Facultat d'Informàtica de Barcelona (FIB)}\\\textsc{\Large Universitat Politècnica de Catalunya (UPC)\vspace{5mm}}\\\textsc{\large Grau en Enginyeria Informàtica (GEI)}\\\textsc{\large}\\{\vspace{30mm}\huge \bfseries \fontfamily{lmss}\selectfont Implementation of a LoRa mesh library}  \\ { \LARGE \textsc{}}}
+
+\begin{document}
+
+
+
+	\maketitle
+    
+    \tableofcontents
+    
+    \newpage
+    
+    \section{Context}
+    \input{Context}
+    \section{Justification}
+    \input{Justification}
+    \section{Scope}
+    \input{Scope}
+    \section{Methodology and rigor}
+    \input{Methodology}
+    \section{Tasks}
+    \input{Tasks}
+    %\section{Gantt}
+    %\input{Gantt}
+    %\section{Risk management}
+    %\input{Risk}
+    %\section{Sustainability}
+    %\input{Sustainability}
+    \newpage
+    \section{Budged and costs}
+    \input{Costs}
+    \section{Legal considerations}
+    \input{Legal}
+    
+	\newpage
+    \bibliography{bibliography}
+	\bibliographystyle{plain}
+    
+    
+\end{document}

@@ -1,0 +1,121 @@
+Budgeting and properly managing the costs later in the project are important steps to take in order to stop possible mistakes in time and guarantee the success of the project. In the following sections we will explain the costs associated with the research and how they are distributed.
+\subsection{Direct costs}
+Direct costs are those consisting in human costs plus the amortization of all the hardware we will need. In order to have a good estimation of what would be the costs in an ordinary work environment we will pretend that the tasks will be done by different people with different roles within the organization, with a salary similar to what would be standard in Spain. Tables \ref{tab:Roles} and \ref{tab:Costs} show those costs.
+
+To compute amortizations we will take into account the prices of the hardware devices we already had and compute the amortization costs during the research. We will estimate that all the electronic devices have a 5 year lifespan and apply the following formula to compute the amortization costs: $$ Cost = \dfrac{Retail Price}{\frac{Useful Life}{Time Used}} $$
+\autoref{tab:AmortizationCosts} shows the amortization costs associated with the project. The total costs of this section amount to 10340\euro\ + 134\euro\ = 10474\euro, or 2330\euro cheaper than initially planned.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|l|c|c|c|}
+\hline
+\rowcolor[HTML]{9B9B9B} 
+\textbf{Abbr.} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Role Name}} &
+  \textbf{Hours} &
+  \textbf{\begin{tabular}[c]{@{}c@{}}Salary\\ \euro/h\end{tabular}} &
+  \textbf{Cost} \\ \hline
+PA & Project Administrator & 148 & 30 & 4440  \\ \hline
+SA & Software architect    & 40 & 24 & 960 \\ \hline
+P  & Programmer            & 291 & 20 & 3980 \\ \hline
+EE & Electrical Engineer   & 40 & 24 & 960 \\ \hline
+\end{tabular}%
+\caption{Costs associated with every role in the project.}
+\label{tab:Roles}
+\end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\cline{1-5} \cline{7-11}
+\cellcolor[HTML]{9B9B9B}\textbf{ID} &
+  \cellcolor[HTML]{9B9B9B}\textbf{Role} &
+  \cellcolor[HTML]{9B9B9B}\textbf{Hours} &
+  \cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Salary\\ \euro/h\end{tabular}} &
+  \cellcolor[HTML]{9B9B9B}\textbf{Cost} &
+  \textbf{} &
+  \cellcolor[HTML]{9B9B9B}\textbf{ID} &
+  \cellcolor[HTML]{9B9B9B}\textbf{Role} &
+  \cellcolor[HTML]{9B9B9B}\textbf{Hours} &
+  \cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Salary\\ \euro/h\end{tabular}} &
+  \cellcolor[HTML]{9B9B9B}\textbf{Cost} \\ \cline{1-5} \cline{7-11} 
+T1  & P  & 6  & 20 & 120 & \textbf{} & T11 & SA & 20  & 24 & 480  \\ \cline{1-5} \cline{7-11} 
+T2  & P  & 35 & 20 & 700 & \textbf{} & T12 & P  & 140 & 20 & 2800  \\ \cline{1-5} \cline{7-11} 
+T3  & P  & 30 & 20 & 600 & \textbf{} & T13 & P & 80 & 20 & 1600  \\ \cline{1-5} \cline{7-11} 
+T4  & PA & 26 & 30 & 780 & \textbf{} & T14 & PA & 60 & 30 & 180  \\ \cline{1-5} \cline{7-11} 
+T5  & PA & 8  & 30 & 240 & \textbf{} & T15 & PA & 40 & 30 & 1200  \\ \cline{1-5} \cline{7-11} 
+T6  & PA & 4  & 30 & 120 & \textbf{} &  &  &  &  &  \\ \cline{1-5} \cline{7-11} 
+T7  & PA & 4  & 30 & 120 & \textbf{} &  &  &  &  &  \\ \cline{1-5} \cline{7-11} 
+T8  & PA & 6  & 30 & 180 & \textbf{} &  &  &  &  &  \\ \cline{1-5} \cline{7-11} 
+T9  & EE  & 40 & 24 & 960 & \textbf{} &  &  &  &  &  \\ \cline{1-5} \cline{7-11} 
+T10 & SA  & 20 & 24 & 480 & \textbf{} &  &  &  &  &  \\ \cline{1-5} \cline{7-11} 
+ &   &  &  &  &  \textbf{} & Total &  &  &  &  10340\\ \cline{1-5} \cline{7-11}
+\end{tabular}%
+
+\caption{Costs associated with every task. Taxes included}
+\label{tab:Costs}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{9B9B9B} 
+\textbf{Item} &
+  \textbf{\begin{tabular}[c]{@{}c@{}}Unit\\ Cost \euro\end{tabular}} &
+  \textbf{Units} &
+  \textbf{\begin{tabular}[c]{@{}c@{}}Use\\ (mo)\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}c@{}}Cost\\ \euro\end{tabular}} \\ \hline
+Workstation & 1700 & 1  & 4 & 113 \\ \hline
+T-Beam      & 30   & 10 & 4 & 20 \\ \hline
+ESP-Prog    & 15   & 1  & 4 & 1 \\ \hline
+\end{tabular}%
+
+\caption{Amortization costs}
+\label{tab:AmortizationCosts}
+\end{table}
+
+
+\subsection{Indirect costs}
+Indirect costs refer to the costs of a project, regardless of specifics. We identify electricity, Internet access and rent as such. In order to have a good approximation, we'll use a typical co-working space which averages\footnote{Used to, the pandemic changed the prices significantly} 300\euro\ in the city of Barcelona. Which for the whole duration of the project, four months, adds up to 1200\euro.
+
+\subsection{Contingencies}
+Contingency costs is the budged reserved to cover delays in development and an overall extensions of the project. We will allocate an extra 20\% for possible delays. This amounts to $(1200$\euro $+ 12670$\euro$) \times 0.2 = 2774$\euro  
+
+\subsection{Incidentals}
+Incidental costs are related to the occurrence of possible risks that usually do not depend on the people in charge of the project. In this case, disregarding the bus factor\footnote{\url{https://en.wikipedia.org/wiki/Bus\_factor}} little amount of incidents can occur that lead to more spending. There is no licensing whatsoever and the experiment schedules should be planned in a flexible way so restrictions don't affect the data gathering in a severe way
+
+\subsection{Total}
+\label{sec:Total}
+If we add up the Direct costs, Indirect costs and Contingencies we obtain, as shown in \autoref{tab:TotalCosts} that the total budged for the project is 14314\euro\ or 2300\euro\ less than before
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{9B9B9B} 
+\textbf{Type} & \textbf{\begin{tabular}[c]{@{}c@{}}Cost\\ \euro\end{tabular}} \\ \hline
+Direct        & 10474                                                      \\ \hline
+Indirect      & 1200                                                       \\ \hline
+Contingencies & 2774                                                       \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Total         & 14314                                                      \\ \hline
+\end{tabular}%
+
+\caption{Project costs by category}
+\label{tab:TotalCosts}
+\end{table}
+
+\subsection{Management Procedures}
+In order to make sure the project does not go off the rails with uncountable delays it's important to detect them early on to apply the proper solutions. In order to keep track of a natural development of the project we will pay close attention to the Direct costs because it's where the greatest variance between the expected and the actual ---worked hours--- will be potentially greatest. We will use the following formula to know the cost deviation: $$ Cost Deviation = (Expected hours - Real Hours) \times Hour Rate $$
+We can use this formula to know the overall Cost deviation but also apply the same formula to individual tasks to have a fine grained control of the situation.
