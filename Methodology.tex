@@ -1,1 +1,16 @@
-Even thought the scope of the project has changed, the methodology and rigor stay mostly the same. The only changes are the deletion of the items related to the performance analysis. In addition, we will also be adding a logging functionality to ease the debugging.
+%Expandir el que hi ha al document word del Felix
+We will be following certain procedures to guarantee a fast version turnover to not waste time doing tasks not directly related to the project. In this section we disregarded the topics related on the analysis on the performance of the library as we will not be focusing on this, as stated above. 
+
+\subsection{Setup}
+\subsubsection{IDE}
+We will be using PlatformIO\footnote{\url{https://platformio.org}}, a VSCode\footnote{\url{https://code.visualstudio.com}} add-on specifically designed to work with microcontrollers. It handles libraries or flashing the code, which will speed up the process of development significatively.
+
+
+\subsection{Clean code}
+When developing on a platform like a microcontroller it is important to be able to easily pinpoint eventual mistakes in the coding process. In addition, we need the library to be easy to read and expand to ensure that the software developer does not have to have a complex model of the architecture of the library in mind which can lead to mistakes. For this reason good code quality practices will be used and \textit{spaghetti code} will be avoided.
+
+\subsubsection{Testing}
+Developing software has its risks. Most of them can be dealt with by testing early and regularly. With the help of PlatformIO and its debugger, as well as the ESP-Prog\footnote{\url{https://docs.platformio.org/en/latest/plus/debug-tools/esp-prog.html\#debugging-tool-esp-prog}} debugging board, which will allow for proper debugging in a microcontroller, in addition to small tests in laboratory conditions we expect that software errors will  be less problematic and we will be able to build a reliable tool. In addition, we will also adding a logging functionality to make sure we know what actions are taking place at any time and highlighting erratic behavior early on
+% Test early and regularly
+	% ESP-Prog
+	% Mini-demo in laboratory conditions
