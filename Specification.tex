@@ -1,0 +1,23 @@
+% Parlar sobre què fa la llibreria i com ho fa
+		% - Retransmetre paquets de control de forma periòdica que construeixen un mapa de la xarxa
+		% - Enviar paquets a nodes adjaçents
+		% - Escoltar per paquets que arriben per posar-los a la taula de enrutament
+% Parlar sobre FreeRTOS
+    	% - Integrat en el sistema de ESP32, pelque no afegeix espai en el binari
+    	% - Permet executar tasques recorrents sense la necessitat que l'usuari hi participi ja que es fa el setup quan s'inicialitza la classe
+% Parlar sobre RadioLib
+		% - Permet simplicitat de cara a l'usuari utilitzant la ISR (aprofitar per explicar què és una ISR)
+		% - Suporta hardware molt diferent 
+In its current state, the project is able communicate with close nodes that are in the range of the radio device. It relays the current nodes that each node has in reach and adds them to a topology map when it receives the appropriate message. It can also send and receive preset messages but currently the library is not able to relay such messages for technical reasons that will be explained in the coming sections. %TODO Posar un link a la secció on s'explica la necessitat d'implementar una cua i perquè no és trivial de fer
+In addition, it does all this things completely transparently to the user (or developer, in this case) as the control and telemetry communications are completely hidden and automated.
+
+As mentioned in previous sections, we are developing this library for microcontrollers and thus, we need to adhere to their requirements and capabilities. It would be pointless to design a library that would work well on full desktop computers, that usually have a great amount of resources when this is the last place this code is going to run on. Systems like microcontrollers rarely have more than a few MB of memory available and they rarely have powerful processors, seldom having more than a few hundreds MHz CPU clocks. %TODO Posar una comparació entre els recursos de la TTGO i un PC normal per posar en evidència la limitació de recursos
+This constraints force us to take certain considerations and careful thought when picking which underlying libraries we will use to accomplish our goals. Fortunately the right combination was found:
+\subsection{RadioLib}
+RadioLib\footnote{\url{https://github.com/jgromes/RadioLib}} is a \textit{Universal wireless communication library for Arduino}. It supports multiple board architectures such as AVR\footnote{\url{https://www.arduino.cc}}, Curie\footnote{\url{https://en.wikipedia.org/wiki/Intel_Quark}} or in the case that matters to us, ESP32\footnote{\url{https://en.wikipedia.org/wiki/ESP32}}. It also supports different modules for the comunication and different protocols ranging from MQTT to the one that is interesting to us, LoRa.
+
+RadioLib was the library chosen among other available options not only for its ability to support different board configurations but also because of a specific feature it supports; being able to use the ISR as a callback mechanism when packets are received
+\subsubsection{The ISR}
+The ISR or \textit{Interrupt Service Routine}
+\subsubsection{How we use the ISR}
+\subsection{FreeRTOS}
