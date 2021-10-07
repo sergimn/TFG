@@ -16,8 +16,15 @@ This constraints force us to take certain considerations and careful thought whe
 \subsection{RadioLib}
 RadioLib\footnote{\url{https://github.com/jgromes/RadioLib}} is a \textit{Universal wireless communication library for Arduino}. It supports multiple board architectures such as AVR\footnote{\url{https://www.arduino.cc}}, Curie\footnote{\url{https://en.wikipedia.org/wiki/Intel_Quark}} or in the case that matters to us, ESP32\footnote{\url{https://en.wikipedia.org/wiki/ESP32}}. It also supports different modules for the comunication and different protocols ranging from MQTT to the one that is interesting to us, LoRa.
 
-RadioLib was the library chosen among other available options not only for its ability to support different board configurations but also because of a specific feature it supports; being able to use the ISR as a callback mechanism when packets are received
+RadioLib was the library chosen among other available options not only for its ability to support different board configurations but also because of a specific feature it supports; being able to use the ISR as a callback mechanism when packets are received.
 \subsubsection{The ISR}
 The ISR or \textit{Interrupt Service Routine}
 \subsubsection{How we use the ISR}
 \subsection{FreeRTOS}
+FreeRTOS \footnote{\url{https://www.freertos.org/RTOS.html}} is a Real Time Operating System kernel for microcontrollers that is used in the toolchain we use to build the binaries and upload them to the TTGO board. By default is is used to manage WiFi, BT and the \texttt{setup()} and \texttt{loop()} functions present in all Arduino ESP32\footnote{\url{https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html}} code. FreeRTOS is widely chosen in the industry for being tested, flexible, reliable, scalable and also very low profile, as the binary image rarely takes more than a few KB and it has a very low memory and CPU footprint\cite{FreeRTOSCharacteristics}. In addition, FreeRTOS also provides an easy way to program and schedule tasks that will allow us to exchange telemetry about the nodes periodically as well as delay message transmission for legal compliance issues. Moreover, it also has support for preemptive tasks through programmable interrupts and the ISR.
+Because all of this features and because FreeRTOS was already baked into every binary we would generate.
+\subsubsection{The tasks}
+% Es fan servir 2 tasques
+	% La periòdica de enviar telemetria. Explicar que perque aquesta funció fos transparent per l'usuari es necessitava fer servir freertos
+	% La de rebre els paquets i processar la telemetria
+	% En un futur, la d'enviar els paquets normals
