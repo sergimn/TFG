@@ -26,6 +26,26 @@
 \usepackage{subfig}
 \usepackage{pdflscape}
 
+\lstset{
+	language        = c++,
+    backgroundcolor=\color{mygray},
+	basicstyle      = \footnotesize\ttfamily,
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+	numbers=left,
+	stepnumber=1,  
+	numberfirstline=true,
+	numberstyle=\footnotesize,
+	xleftmargin=5.0ex,
+	upquote=true,
+    frame=single,
+    showstringspaces=false,
+    breaklines=true,
+	showlines=true
+}
+
 \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[normalem]{ulem}
@@ -78,14 +98,8 @@
     \input{Costs}
     \section{Library specification}
     \input{Specification}
-    
     \section{Issues during development}
-    % Parlar sobre les modificacions a la placa per adaptar el debugger
-    % Parlar sobre passar instancies de una classe a la ISR
-    	% Parlar sobre el problema, la solució utlitizada, perqué aquesta solució (és important que la implementació sigui transparent per l'usuari) i el merge request que va ser denegat per la incompatibilitat amb les plaques (AVR) i que aixo ha comportat fer servir el nostre fork de RadioLib
-    % Parlar sobre problemes misteriosos
-    	% Parlar sobre rebre paquets fantasma quan es transmet un paquet (Posar extracte de codi de RadioLib)
-    	% Parlar sobre diversos crashes en el sistema per culpa de les prioritats i rutines blocants (wdt)
+    \input{Issues}
     \section{Real World example}
     % Fer un minitestbed i posar logs
     \section{Future work}
