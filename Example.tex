@@ -1,0 +1,33 @@
+This is an example of the library logs that will help to better understant how the library behaves. In this testbed there are only two nodes and only one of them is shown. The other one has similar messages but with different origin/destination
+
+\begin{lstlisting}[numbers=none, caption={Fragment of the initialization logs of the library where it can be seen how the library recieves telemetry from other nodes, builds the routing table and sends some data.}, label=lst:LibraryLog,captionpos=b]
+T: LoRa module initialization...
+V: Initializing Radiolib
+V: Initializing radio
+V: Setting up receiving task
+V: Setting up callback function
+T: LoRa module initialization DONE
+T: Sending HELLO packet 0
+T: About to transmit HELLO packet
+T: HELLO packet sended
+V: Initiaization DONE, starting receiving packets...
+N: Receiving LoRa packet 1: Size: 112 RSSI: -88 SNR: 6
+V: HELLO packet 0 from 0xC8
+V: New route added: 0xC8 via 0x38 metric 1
+Current routing table:
+C8 via 38 metric 1
+
+V: Starting to listen again after receiving a packet
+T: Sending DATA packet 0
+T: Data packet sended
+N: Receiving LoRa packet 2: Size: 112 RSSI: -91 SNR: 8
+V: Data broadcast message:
+V: PAYLOAD: 0x0
+V: Starting to listen again after receiving a packet
+T: Sending DATA packet 1
+T: Data packet sended
+...
+\end{lstlisting}
+
+
+
