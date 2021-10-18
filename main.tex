@@ -103,18 +103,8 @@
     \section{Real World example}
     % Fer un minitestbed i posar logs
     \section{Future work}
-    % Fer servir una llibreria de logging que digui el temps en el que s'ha imprés el missatge (posar una cita a l'article del rellotge atomic de FB que van fer fa poc per demostrar que és una tasca díficil, la de sincronitzar diferents dispositius) i mencionar que es podria fer servir la llibreria desenvolupada en un principi per a sincronitzar els nodes per a fer proves per a obtenir el temps (ja que si s'inicien en monents diferents no estaran sincronitzats)
-    % Acabar el featureset de la llibreria
-    	% Que pugui enviar i rebre missatges personalitzats per l'usuari
-    % Afegir una cua de missatges per no incumplir les regulacions de dutycicle i que els missatges s'enviïn automaticament
-    % Afegir una altra cua amb més prioritat per missatges de control
-    % Fer piggybacking de missatges reals per transmetre missatges de control
-    % Fer estudi estadísic
-    	% Mirar quin és el període òptim de l'enviament de missatges de control i si convé que aquest perídoe canviï amb el temps
-    	% Estudiar les capacitats de la llibreria sota diferentes topologies
-    	% Fer servir metriques (Posició, nivell de bateria, nombre d'enllaços) per a cambiar diferents paràmetres de la ràdio (freqüència, SF, bandwith, potencia)
-    % Ampliar la configurabilitat de la llibreria. Diferents casos d'ús poden necessitar més o menys features
-    % En el llarg termini, desfer-se de RadioLib, que tot i que és una molt bona llibreria té una mica de overhead (mencionar que al afegir la nostra header s'ha de copiar la payload del usuari ja que necessitem passar-li el paquet a RadioLib en una posició de memoria on estigui contigu mentre que la llibreria "Arduino-LoRa" va fent push de la payload una cua hardware i podriem utilitzar la mateixa estratègia
+    \input{Future}
+   
     \section{Legal considerations}
     \input{Legal}
     \section{Conclusions}
