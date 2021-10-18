@@ -23,7 +23,6 @@
 \usepackage{numprint}
   \npthousandsep{\,}
 \usepackage[table,xcdraw]{xcolor}
-\usepackage[acronym,toc]{glossaries}
 \usepackage{subfig}
 \usepackage{pdflscape}
 
@@ -46,6 +45,8 @@
     breaklines=true,
 	showlines=true
 }
+
+
 
 \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
@@ -78,9 +79,14 @@
 	\end{figure}
 
 	\maketitle
+	\pagenumbering{roman}
+
+    \include{Abstract}
     
+
     \tableofcontents
     \newpage
+    
     
     \listoffigures
     \newpage
@@ -90,9 +96,13 @@
     
 	\lstlistoflistings
 	\newpage
-    
+	
+	
+    \input{Glossary}
     \newpage
-    \include{Abstract}
+    
+    \pagenumbering{arabic}
+	\setcounter{page}{1}
     \section{Context}
     \input{Context}
     \section{Justification}
