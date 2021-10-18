@@ -14,21 +14,21 @@ According to information available at the PlatformIO documentation, the board we
     \subfloat[\texttt{IO12} pin transforms into \texttt{RXD1}]{{\includegraphics[width=7cm]{Figures/Schematics_1.png}}}%
     \qquad
     \subfloat[\texttt{RXD1} enters the GPS module]{{\includegraphics[width=7cm]{Figures/Schematics_2.png}}}%
-    \caption{Schematics of the TTGO board \cite{TTGOSchematics}}%
+    \caption[Schematics of the TTGO board]{Schematics of the TTGO board \cite{TTGOSchematics}}%
     \label{fig:SchematicsTTGO}%
 \end{figure}
 
 \begin{figure}[h!]
         \centering
         \includegraphics[width=15cm]{Figures/DebuggerSolution.jpeg}
-        \caption{Close up of the TTGO with an overlay indicating what parts of the schematics on \autoref{fig:SchematicsTTGO} are what on the board}
+        \caption[TTGO closeup with overlay]{Close up of the TTGO with an overlay indicating what parts of the schematics on \autoref{fig:SchematicsTTGO} are what on the board}
         \label{fig:DebuggerSolutiion}
 \end{figure}
 
 \subsection{RadioLib does not fully support OOP}
 Even though the choice for RadioLib appeared to be the optimal one at the beginning, as the development progressed, there was one critical issue, the assignation of the ISR didn't support passing member functions, a critical feature if we wanted to develop our code in C++ and have better modularity. The issue was that the RadioLib function that needed to be called in order to set up our custop ISR, \texttt{setDio0Action()} had the signature \texttt{setDio0Action (void(*func)(void))}, but because the function needed to be passed was part of a C++ class, that member function had the signature of \texttt{void MyClass::func(void)}, which does not mach and the compiler refuses to accept. Fortunately, with the use of C++ Standard Library, we made a potential Pull Request for RadioLib that would allow it to accept member functions on the ISR setup call thanks to the \texttt{functional} STD class as seen in \autoref{lst:RadioLibPR}. However, because AVR, which is a supported and very common platform, does not support \texttt{functional}\cite{RadioLibPR}. Thus the pull request was not accepted, but we decided to fork the project and use the version with my slight variation, as it was not expected to use AVR systems for testing and a solution can be thought in the future on how to solve this issue.
 
-\begin{lstlisting}[firstnumber=687, caption=Fragment of the PR that would have allowed RadioLib to accept member functions on ISR setup. The rest of the PR touches some internals of the library. This code section belongs to SX127x.cpp, label=lst:RadioLibPR,captionpos=b]
+\begin{lstlisting}[firstnumber=687, caption={[Fragment of PR]Fragment of the PR that would have allowed RadioLib to accept member functions on ISR setup. The rest of the PR touches some internals of the library. This code section belongs to SX127x.cpp}, label=lst:RadioLibPR,captionpos=b]
 void setDio0Action(std::function<void(void)> func);
 \end{lstlisting}
 

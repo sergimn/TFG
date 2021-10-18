@@ -7,4 +7,6 @@
 *.pdf
 *.gz
 *.dvi
-
+*.lof
+*.lot
+*.lol

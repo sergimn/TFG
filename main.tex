@@ -23,6 +23,7 @@
 \usepackage{numprint}
   \npthousandsep{\,}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage[acronym,toc]{glossaries}
 \usepackage{subfig}
 \usepackage{pdflscape}
 
@@ -66,18 +67,32 @@
 
 \author{ \LARGE Sergi Miralles Nogués\vspace{4mm} \\ Director: Felix Freitag  \\ Co-director: Roger Pueyo Centelles}
 
-\title{\vspace{-15mm}\textsc{\Large Facultat d'Informàtica de Barcelona (FIB)}\\\textsc{\Large Universitat Politècnica de Catalunya (UPC)\vspace{5mm}}\\\textsc{\large Grau en Enginyeria Informàtica (GEI)}\\\textsc{\large}\\{\vspace{30mm}\huge \bfseries \fontfamily{lmss}\selectfont Implementation of a LoRa mesh library}  \\ { \LARGE \textsc{}}}
+\title{\vspace{-15mm}\textsc{\Large Facultat d'Informàtica de Barcelona (FIB)}\\\textsc{\Large Universitat Politècnica de Catalunya (UPC)\vspace{5mm}}\\\textsc{\large Grau en Enginyeria Informàtica (GEI)}\\\textsc{\large Tecnologies de la Informació}\\{\vspace{30mm}\huge \bfseries \fontfamily{lmss}\selectfont Implementation of a LoRa mesh library}  \\ { \LARGE \textsc{}}}
 
 \begin{document}
 
-
+	\begin{figure}
+		%\vspace{-25mm}
+		\centering
+		\includegraphics[width=0.2\linewidth]{Figures/upc.png}
+	\end{figure}
 
 	\maketitle
     
     \tableofcontents
-    
     \newpage
     
+    \listoffigures
+    \newpage
+    
+    \listoftables
+    \newpage
+    
+	\lstlistoflistings
+	\newpage
+    
+    \newpage
+    \include{Abstract}
     \section{Context}
     \input{Context}
     \section{Justification}
