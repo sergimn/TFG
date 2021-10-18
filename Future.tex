@@ -13,3 +13,15 @@
 
 Considering the project has had some hiccups, there is still some work to do. The main issues are related to library improvements to make it more performant and transparent to the user.
 % Fer una llista aqui sense punts ni ordres ni res, com el que vas considerar per les tasques
+\begin{description}
+	\item[Finish the featureset] The current implementation still does not allow for the user to send their own payload or set up a routine to treat the incoming packets. There shoudn't be much work related to make this work as the library already has the relevant working code.
+	\item[Add packet queues] As mentioned in \ref{ssec:Sending}, the need for queues that will act as a buffer for sending messages is needed if we want to stay compliant with current regulations. This queue would hold the messages to be transmitted (either telemetry messages or messages that use this node as a relay to the final destination). It would also be interesting to consider the option of having two queues, one with more priority than the other.
+	\item[Optimize telemetry transmision] The current routine transmits a fixed size array of telemetry that is rarely full, we need to transmit only relevant data.
+\end{description}
+
+In addition, the intended research should still take place and an analisis of the library performance should be carried to understant what factors are more significant and how we can tweak them in order to increase performance.
+\begin{description}
+	\item[Optimal telemetry frequency] More research needs to be put in place to optimize how often telemetry is relayed to other nodes. This library does not focus on mobile networks so once the network has settled there will be little reason to keep sending telemetry data repeatedly and we could wait some minutes between each transmission. In addition, this would also allow us to free more time for data packets.
+	\item[Study performance in different topologies] The library should be stable no matter what topology the network has. There needs to be explicit testing in this regard to guarantee this.
+	\item[Use more telemetry data for path optimization] Telemetry such as battery level or current receiving power on neighbouring nodes should be used to set and continuously change the parameters of the LoRa trasnmission to optimize the network performance. If one node is well connected but it is likely to run out of battery, the network should make the decision of not using this node to relay messages if there are alternative paths, for example.
+\end{description}
